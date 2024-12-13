@@ -7,7 +7,6 @@ import {
   SidebarMenu,
 } from "@/components/ui/sidebar";
 import { useContext, useState } from "react";
-import SearchField from "./SearchFields";
 import SideBarbuttons from "./SideBarbuttons";
 import { UserContext } from "@/context/UserContext";
 import { User } from "@/lib/types";

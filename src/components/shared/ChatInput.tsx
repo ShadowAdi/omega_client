@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/button";
-import { ClipboardIcon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,12 +13,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const ChatInput = ({
-  sender,
-  receiver,
   onSend,
 }: {
-  sender: string;
-  receiver: string;
   onSend: (content: string, type: string) => void;
 }) => {
   const [inputMessage, setInputMessage] = useState("");

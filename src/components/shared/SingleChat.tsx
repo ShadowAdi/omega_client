@@ -117,8 +117,6 @@ const SingleChat = ({
       <div className="absolute bottom-10 left-0 w-full border-t">
         {userData?._id && user?._id && (
           <ChatInput
-            sender={userData?._id}
-            receiver={user?._id}
             onSend={sendMessage}
           />
         )}

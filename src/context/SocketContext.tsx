@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode } from "react";
 import { io, Socket } from "socket.io-client";
 
 // Define the type for the context
