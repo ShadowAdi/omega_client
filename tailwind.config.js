@@ -1,7 +1,14 @@
 export default {
-	content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+	content: [
+	  "./index.html",
+	  "./src/**/*.{html,js,ts,jsx,tsx}",
+	],
 	theme: {
-	  extend: {},
+	  extend: {
+		colors: {
+		  border: '#d1d5db', // Define your custom border color
+		},
+	  },
 	},
 	plugins: [],
   };
