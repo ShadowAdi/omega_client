@@ -1,15 +1,19 @@
-export default {
-	content: [
-	  "./index.html",
-	  "./src/**/*.{html,js,ts,jsx,tsx}",
+module.exports = {
+	content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
+	safelist: [
+		'bg-background',
+		'text-foreground',
+		'border-border',
 	],
 	theme: {
-	  extend: {
-		colors: {
-		  border: '#d1d5db', // Define your custom border color
+		extend: {
+			colors: {
+				background: 'var(--background)',
+				foreground: 'var(--foreground)',
+				border: 'var(--border)',
+			},
 		},
-	  },
 	},
 	plugins: [],
-  };
-  
+};
+

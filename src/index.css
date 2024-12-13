@@ -7,6 +7,14 @@
   .border-border {
     border-color: #d1d5db; /* Replace with your desired color */
   }
+
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .text-foreground {
+    color: var(--foreground);
+  }
 }
 
 :root {
