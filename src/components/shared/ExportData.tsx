@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../ui/button";
 import axios from "axios";
 import { BASE_URL } from "@/lib/types";

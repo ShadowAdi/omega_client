@@ -2,7 +2,6 @@ import AddUser from "@/components/shared/AddUser";
 import BoxCard from "@/components/shared/BoxCard";
 import ExportData from "@/components/shared/ExportData";
 import ImportData from "@/components/shared/ImportData";
-import SearchAdmin from "@/components/shared/SearchAdmin";
 import { Button } from "@/components/ui/button";
 import { UserContext } from "@/context/UserContext";
 import { BASE_URL, User } from "@/lib/types";

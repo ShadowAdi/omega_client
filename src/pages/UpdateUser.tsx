@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Link, redirect, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { CSSProperties, useEffect, useState } from "react";
+import {   useEffect, useState } from "react";
 import { BASE_URL, User } from "@/lib/types";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -37,11 +37,7 @@ const formSchema = z.object({
   isMediaAllowed: z.boolean().default(false),
 });
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "#dadada",
-};
+
 
 const UpdateUser = () => {
   const [user, setUser] = useState<User | null>(null);

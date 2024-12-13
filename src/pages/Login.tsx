@@ -11,7 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useContext } from "react";
