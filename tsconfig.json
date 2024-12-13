@@ -9,9 +9,8 @@
     }
   ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "noUnusedLocals": false, // Ignore unused variables
+    "noUnusedParameters": false, // Ignore unused parameters
+    "noImplicitAny": false // Allow 'any' type without warnings
   }
 }

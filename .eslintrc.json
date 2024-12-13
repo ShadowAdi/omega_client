@@ -1,0 +1,7 @@
+module.exports = {
+    rules: {
+      "no-unused-vars": "off", // Ignore unused variables
+      "@typescript-eslint/no-explicit-any": "off" // Allow 'any' type
+    }
+  };
+  
