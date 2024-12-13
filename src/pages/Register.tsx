@@ -48,14 +48,10 @@ const Register = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await axios.post(
-        `${BASE_URL}register`,
-        values
-      );
-      
-      console.log(response.data);
+      const response = await axios.post(`${BASE_URL}register`, values);
+
       toast.success(response.data.message);
-      window.location.href='/'
+      window.location.href = "/";
     } catch (error: any) {
       if (error.response && error.response.data.message) {
         toast.error(error.response.data.message);
@@ -146,7 +142,7 @@ const Register = () => {
           />
           <Button
             type="submit"
-            className="px-6 py-6 w-[300px]  text-lg mx-auto"
+            className="px-6 py-6 w-[300px]  text-lg mx-auto text-white"
           >
             Register
           </Button>

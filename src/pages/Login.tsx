@@ -104,7 +104,8 @@ const Login = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="px-6 py-6  text-lg mx-auto">
+          <Button type="submit" className="px-6 py-6  text-lg mx-auto text-white">
+
             Login
           </Button>
         </form>
