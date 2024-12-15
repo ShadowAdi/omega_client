@@ -30,4 +30,4 @@ export interface Message {
   updatedAt?: string;
 }
 
-export const BASE_URL="https://server-omega-pi.vercel.app/api/"
+export const BASE_URL="https://omega-server-rouge.vercel.app/api/"
