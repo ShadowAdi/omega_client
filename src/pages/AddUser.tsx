@@ -55,8 +55,7 @@ const AddUser = () => {
         `${BASE_URL}addUser`,
         values
       );
-      redirect("/");
-      console.log(response.data);
+      redirect("https://omega-client-jet.vercel.app/");
       toast.success(response.data.message);
     } catch (error: any) {
       if (error.response && error.response.data.message) {

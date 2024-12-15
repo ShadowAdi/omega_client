@@ -2,7 +2,6 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
@@ -32,6 +31,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.0",
+    "react-icons": "^5.4.0",
     "react-papaparse": "^4.4.0",
     "react-router-dom": "^7.0.2",
     "react-spinners": "^0.15.0",

@@ -33,17 +33,17 @@ const Admin = () => {
   return (
     <section className="flex flex-col py-3 px-4 w-full h-screen ">
       <nav className="flex mx-auto justify-between items-center w-[80%]   py-4 border-b border-b-slate-700">
-        <Link to={"/chats"}>
+        <Link to={"https://omega-client-jet.vercel.app/"}>
           <span className="text-3xl font-semibold text-black ">Chats</span>
         </Link>
         <div className="flex gap-6 items-center">
           <AddUser />
           <Button
-            className="rounded-full"
+            className="rounded-full text-white"
             onClick={() => {
               setUserData(null);
               localStorage.removeItem("token");
-              redirect("/");
+              redirect("https://omega-client-jet.vercel.app/");
             }}
           >
             Logout

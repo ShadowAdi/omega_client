@@ -78,11 +78,14 @@ const ChatInput = ({
             >
               <p className="text-xs">Media</p>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>Choose Media</DropdownMenuLabel>
+            <DropdownMenuContent className="bg-white text-black">
+              <DropdownMenuLabel className="text-black">
+                Choose Media
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
               {userData?.isMediaAllowed && (
                 <DropdownMenuItem
+                  className="text-black"
                   onClick={() => {
                     document.getElementById("upload-video")?.click(); // Manually trigger file input
                   }}
@@ -91,6 +94,7 @@ const ChatInput = ({
                 </DropdownMenuItem>
               )}
               <DropdownMenuItem
+                className="text-black"
                 onClick={() => {
                   document.getElementById("upload-image")?.click(); // Manually trigger file input
                 }}

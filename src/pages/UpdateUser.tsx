@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Link, redirect, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import {   useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BASE_URL, User } from "@/lib/types";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -37,8 +37,6 @@ const formSchema = z.object({
   isMediaAllowed: z.boolean().default(false),
 });
 
-
-
 const UpdateUser = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
@@ -57,9 +55,7 @@ const UpdateUser = () => {
   const GetUser = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `${BASE_URL}getUser/${id}`
-      );
+      const response = await axios.get(`${BASE_URL}getUser/${id}`);
       setUser(response.data.user); // Set user data when fetched
     } catch (error: any) {
       if (error.response && error.response.data.message) {
@@ -98,13 +94,9 @@ const UpdateUser = () => {
   }, [user, form.setValue]);
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await axios.put(
-        `${BASE_URL}updateUser/${id}`,
-        values
-      );
+      const response = await axios.put(`${BASE_URL}updateUser/${id}`, values);
       toast.success(response.data.message);
-      redirect("/admin");
-      // Handle successful update, like redirecting or updating state
+      window.location.href = "/admin";
     } catch (error: any) {
       if (error.response && error.response.data.message) {
         toast.error(error.response.data.message);
@@ -236,7 +228,7 @@ const UpdateUser = () => {
           <div className="w-full flex mt-10 items-center justify-between">
             <Button
               type="submit"
-              className="px-6 py-6 w-[300px] text-lg mx-auto"
+              className="px-6 py-6 w-[300px]  text-white text-lg mx-auto"
             >
               Update User
             </Button>

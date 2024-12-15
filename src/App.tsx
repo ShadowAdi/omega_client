@@ -16,13 +16,11 @@ import { BASE_URL } from "./lib/types";
 function App() {
   const { userData, setUserData, loading, setLoading } =
     useContext(UserContext)!;
-  const token = localStorage.getItem("token");
+
   const GetUser = async (id: string) => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `${BASE_URL}getUser/${id}`
-      );
+      const response = await axios.get(`${BASE_URL}getUser/${id}`);
       setUserData(response.data.user);
     } catch (error: any) {
       if (error.response && error.response.data.message) {
@@ -36,14 +34,35 @@ function App() {
       setLoading(false);
     }
   };
+
   useEffect(() => {
+    // Get token from URL if available
+    const token = localStorage.getItem("token");
+    const params = new URLSearchParams(window.location.search);
+    const tokenFromUrl = params.get("token");
+
     if (token) {
       const decodedToken = jwtDecode<{ id: string }>(token);
       if (decodedToken?.id) {
         GetUser(decodedToken.id);
       }
     }
-  }, [token]);
+
+    if (tokenFromUrl) {
+      localStorage.setItem("token", tokenFromUrl);
+      params.delete("token"); // Remove token from URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    const storedToken = localStorage.getItem("token");
+
+    if (storedToken) {
+      const decodedToken = jwtDecode<{ id: string }>(storedToken);
+      if (decodedToken?.id) {
+        GetUser(decodedToken.id);
+      }
+    }
+  }, []);
 
   return (
     <div className="w-screen h-screen relative flex items-center justify-center">

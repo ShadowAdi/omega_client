@@ -4,12 +4,20 @@ import { toast } from "react-toastify";
 
 import { redirect } from "react-router-dom";
 import { BASE_URL } from "@/lib/types";
+import { useContext } from "react";
+import { UserContext } from "@/context/UserContext";
 
 const DeleteUser = ({ userId }: { userId: string }) => {
+  const {userData,setUserData}=useContext(UserContext)!
   const deleteUser = async (id: string) => {
     try {
       await axios.delete(`${BASE_URL}deleteUser/${id}`);
       toast.success("Delete the User");
+      if (userData?._id===userId) {
+        setUserData(null)
+        localStorage.removeItem("token")
+        redirect("/")
+      }
       redirect("/admin");
     } catch (error: any) {
       if (error.response && error.response.data.message) {

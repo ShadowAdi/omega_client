@@ -42,14 +42,11 @@ const Login = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await axios.post(
-        `${BASE_URL}login`,
-        values
-      );
+      const response = await axios.post(`${BASE_URL}login`, values);
       toast.success(response.data.message);
       localStorage.setItem("token", response.data.token);
       setUserData(response.data.user);
-      window.location.href='/'
+      window.location.href = "https://omega-client-jet.vercel.app/";
     } catch (error: any) {
       if (error.response && error.response.data.message) {
         toast.error(error.response.data.message);
@@ -104,12 +101,26 @@ const Login = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="px-6 py-6  text-lg mx-auto text-white">
-
+          <Button
+            type="submit"
+            className="px-6 py-6  text-lg mx-auto text-white"
+          >
             Login
           </Button>
         </form>
       </Form>
+      <hr className="w-full border-b border-black" />
+
+      <Button
+        onClick={() => {
+          window.location.href =
+            "https://server-omega-pi.vercel.app/api/auth/google";
+        }}
+        className="flex gap-2
+ bg-blue-600 text-white w-[200px] py-6 hover:bg-blue-700 items-center rounded-full"
+      >
+        <span className="text-xl">Google</span>
+      </Button>
       <div className="flex mt-4 items-center justify-center gap-1 text-center text-black">
         <p className="text-lg text-black text-center">
           {" "}
