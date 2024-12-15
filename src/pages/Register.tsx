@@ -152,7 +152,7 @@ const Register = () => {
       <Button
         onClick={() => {
           window.location.href =
-            "https://omega-server-rouge.vercel.app/api/auth/google";
+            "https://omega-server-k372.onrender.com/api/auth/google";
         }}
         className="flex gap-2
        bg-blue-600 text-white w-[200px] py-6 hover:bg-blue-700 items-center rounded-full"
