@@ -96,7 +96,7 @@ const UpdateUser = () => {
     try {
       const response = await axios.put(`${BASE_URL}updateUser/${id}`, values);
       toast.success(response.data.message);
-      window.location.href = "/admin";
+      window.location.href = "https://omega-client-jet.vercel.app/admin";
     } catch (error: any) {
       if (error.response && error.response.data.message) {
         toast.error(error.response.data.message);

@@ -43,7 +43,7 @@ const Admin = () => {
             onClick={() => {
               setUserData(null);
               localStorage.removeItem("token");
-              redirect("https://omega-client-jet.vercel.app/");
+              window.location.href = "/";
             }}
           >
             Logout
